@@ -1,5 +1,4 @@
 import streamlit as st
-import sys
 from bs4 import BeautifulSoup as bs  # serve para fazer a reaspagem em si
 import re  #serve para extrair o número float da string(expressão regular)
 #Fazendo slicing para tirar todos indicadores que estão no script(gambiarra)
