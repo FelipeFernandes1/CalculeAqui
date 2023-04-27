@@ -189,7 +189,7 @@ try:
                 avaliacoes2 = novas_avaliacoes_negativas + avaliacoes
                 if IR2 < 90 or MA2 < 7 or IS2 < 90 or IN2 < 70 or avaliacoes2 < 50:
                     nova_reputacao = 'ÓTIMO'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Contudo, se você tomar mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo ÓTIMO.'''
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Contudo, se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo ÓTIMO.'''
 
         elif reputacao == 'NÃO RECOMENDADA' and IR <= 50 and avaliacoes < 10:
             novas_avaliacoes_positivas = 0
@@ -355,7 +355,7 @@ try:
                     AR2 = round(AR2, 1)
                     if AR2 < 5:
                         nova_reputacao = 'NÃO RECOMENDADA'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação REGULAR você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você tomar mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo NÃO RECOMENDADA.'''
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação REGULAR você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo NÃO RECOMENDADA.'''
 
         elif reputacao == 'REGULAR':
             novas_avaliacoes_positivas = 0
@@ -411,7 +411,7 @@ try:
                     AR2 = round(AR2, 1)
                     if AR2 < 6:
                         nova_reputacao = 'RUIM'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação BOM você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você tomar mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo RUIM.'''
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação BOM você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo RUIM.'''
 
         elif reputacao == 'BOM':
             novas_avaliacoes_positivas = 0
@@ -467,7 +467,7 @@ try:
                     AR2 = round(AR2, 1)
                     if AR2 < 7:
                         nova_reputacao = 'REGULAR'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação ÓTIMO você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você tomar mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo REGULAR.'''
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação ÓTIMO você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo REGULAR.'''
 
         elif reputacao == 'ÓTIMO':
             novas_avaliacoes_positivas = 0
@@ -534,7 +534,7 @@ try:
                     AR2 = round(AR2, 1)
                     if AR2 < 8:
                         nova_reputacao = 'BOM'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :green[**RA1000**] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você tomar mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo BOM.'''
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :green[**RA1000**] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo BOM.'''
     st.markdown(f'''##### {resultado}''', help='O algoritimo considera como "avaliação positiva" aquela que obtém nota máxima nas três perguntas que compõem a avaliação. A "avaliação negativa" é proporcionalmente oposta, ou seja aquela que obtém nota mínima nas três perguntas que compõem a avaliação.')  #Printa o resultado no app
 except:
     st.write(':red[Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.]')
