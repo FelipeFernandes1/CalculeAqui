@@ -141,7 +141,7 @@ try:
     else:
         with st.sidebar:
             reclamacoes = st.number_input(label='#### Total de reclamações', format='%d', step=1, min_value=0)
-            respondidas = st.number_input(label='#### Total de respostas', format='%d', step=1, min_value=0)
+            respondidas = st.number_input(label='#### Total de respostas', format='%d', step=1, min_value=0, help='Corresponde ao número de casos finalizados, ou seja, respondidos publicamente.')
             MA = st.number_input(label='#### Média das notas', format="%.2f", min_value=0.0, max_value=10.00, step=0.01)
             IS = st.number_input(label='#### Índice de solução', format="%.1f", min_value=0.0, max_value=100.0, step=0.1)
             IN = st.number_input(label='#### Índice de novos negócios', format="%.1f", min_value=0.0, max_value=100.0, step=0.1)
