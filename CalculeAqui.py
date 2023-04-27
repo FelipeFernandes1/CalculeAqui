@@ -556,7 +556,9 @@ try:
     if len(resultado) > 2:
         st.markdown(' ', help='O algoritimo considera como "avaliação positiva" aquela que obtém nota máxima nas três perguntas que compõem a avaliação. A "avaliação negativa" é proporcionalmente oposta, ou seja aquela que obtém nota mínima nas três perguntas que compõem a avaliação.')
 except:
-    st.write(':red[Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.]')
+    st.write(''':red[Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.]
+
+contato: fernandes290692@gmail.com''')
 
 
 
