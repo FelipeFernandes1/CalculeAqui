@@ -549,8 +549,8 @@ try:
                         nova_reputacao = 'BOM'
             resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :green[**RA1000**] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo BOM.'''
     st.markdown(f'''##### {resultado}''')  #Printa o resultado no app
-        if len(resultado) > 2:
-            st.markdown(' ', help='O algoritimo considera como "avaliação positiva" aquela que obtém nota máxima nas três perguntas que compõem a avaliação. A "avaliação negativa" é proporcionalmente oposta, ou seja aquela que obtém nota mínima nas três perguntas que compõem a avaliação.')
+    if len(resultado) > 2:
+        st.markdown(' ', help='O algoritimo considera como "avaliação positiva" aquela que obtém nota máxima nas três perguntas que compõem a avaliação. A "avaliação negativa" é proporcionalmente oposta, ou seja aquela que obtém nota mínima nas três perguntas que compõem a avaliação.')
 except:
     st.write(':red[Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.]')
 
