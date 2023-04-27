@@ -19,7 +19,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.title(':green[*Calcule Aqui*]', help='Essa ferramenta tem como objetivo realizar uma análise preditiva sobre a reputação da empresa na plataforma Reclame Aqui.')
+st.title(':green[*Calcule Aqui*]', help='''Essa ferramenta tem como objetivo realizar uma análise preditiva sobre a reputação da empresa na plataforma Reclame Aqui.
+
+Sugestões, críticas, dúvidas e elegios são bem vindos ;D 
+
+contato: fernandes290692@gmail.com''')
 
 botaotipoanalise = st.selectbox('##### Para começarmos, escolha uma opção abaixo: ', options=('Abas do site Reclame Aqui', 'Período específico'), help='''A opção "abas do site" é indicada quando o objetivo é analisar a reputação da empresa no site do RA. 
 
