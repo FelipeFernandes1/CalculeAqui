@@ -5,6 +5,19 @@ import re  #serve para extrair o número float da string(expressão regular)
 #Cada aba será um elemento da lista, totalizando 5
 import cfscrape  #É uma alternativa à biblioteca Request
 
+st.markdown("""
+<style>
+.css-yj6bdc.edgvbvh3
+{
+    visibility: hidden;
+}
+.css-cio0dv.egzxvld1
+{
+    visibility: hidden;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 st.title(':green[*Calcule Aqui*]', help='Essa ferramenta tem como objetivo realizar uma análise preditiva sobre a reputação da empresa na plataforma Reclame Aqui.')
 
