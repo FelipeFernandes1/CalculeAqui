@@ -82,7 +82,7 @@ try:
 
         #Obtendo o código HTML da página
         scraper = cfscrape.create_scraper()  # Obtendo o HTML da página
-        response = scraper.get(f'https://www.reclameaqui.com.br/empresa/{empresa}/')
+        response = scraper.get(f'https://www.reclameaqui.com.br/empresa/{empresa}/', verify=False)
         content = response.content
         site = bs(content, 'html.parser')
 
