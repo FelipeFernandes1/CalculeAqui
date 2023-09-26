@@ -39,24 +39,16 @@ st.markdown(
 st.markdown("<p class='footer'>Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
 
 
-st.title(':green[*Calcule Aqui*]', help='''Essa ferramenta tem como objetivo realizar uma análise preditiva sobre a reputação da empresa na plataforma Reclame Aqui.
+st.title(':green[*Calcule Aqui*]')
 
-Sugestões, críticas, dúvidas e elegios são bem vindos ;D 
-
-contato: fernandes290692@gmail.com''')
-
-botaotipoanalise = st.selectbox('##### Para começarmos, escolha uma opção abaixo: ', options=('Abas do site Reclame Aqui', 'Período específico'), help='''A opção "abas do site" é indicada quando o objetivo é analisar a reputação da empresa no site do RA. 
-
-A opção "período específico" é indicada para analisar períodos que não estão disponíveis no site. Os dados a serem inseridos podem ser obtidos em ferramentas como o Hugme.
-
-Após escolher, preencha o questionário na parte esquerda da tela e clique em "Calcular".''')
+botaotipoanalise = st.selectbox('##### Para começarmos, escolha uma opção abaixo: ', options=('Abas do site Reclame Aqui', 'Período específico'))
 
 st.divider()
 
 try:
     if botaotipoanalise == 'Abas do site Reclame Aqui':
         with st.sidebar:
-            empresa = st.text_input(label='#### Informe o nome da empresa', placeholder='olx', help='Pode ser que o nome exibido no site do RA seja divergente do nome que consta na URL, o nome a ser inserido precisa ser idêntico ao da URL. Não insira caracteres especiais, somente espaços quando houver.')
+            empresa = st.text_input(label='#### Informe o nome da empresa', placeholder='olx')
             if empresa == '':  # só para não deixar a variável em branco, pois estava exibindo erro
                 empresa = 'olx'
             abaescolhida = st.selectbox(label='#### Escolha o período', options=('6 meses', '12 meses', 'Último ano', 'Penúltimo ano', 'Geral'))
