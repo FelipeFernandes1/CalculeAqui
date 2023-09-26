@@ -43,7 +43,6 @@ st.title(':green[*Calcule Aqui*]')
 
 botaotipoanalise = st.selectbox('##### Para começarmos, escolha uma opção abaixo: ', options=('Abas do site Reclame Aqui', 'Período específico'))
 
-st.divider()
 
 try:
     if botaotipoanalise == 'Abas do site Reclame Aqui':
