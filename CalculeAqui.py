@@ -5,38 +5,8 @@ import re  #serve para extrair o número float da string(expressão regular)
 #Cada aba será um elemento da lista, totalizando 5
 import cfscrape  #É uma alternativa à biblioteca Request
 
-st.markdown("""
-<style>
-.css-yj6bdc.edgvbvh3
-{
-    visibility: hidden;
-}
-.css-cio0dv.egzxvld1
-{
-    visibility: hidden;
-}
-</style>
-""", unsafe_allow_html=True)
 
-st.markdown(
-    """
-    <style>
-    .footer {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        color: gray;
-    }
-    .footer a {
-        color: white;
-        text-decoration: underline;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown("<p class='footer'>Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
+st.markdown("<p class='footer' style='text-align: left;'>Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
 
 
 st.markdown("<span style='color: green; font-style: italic; font-size: 50px; font-weight: bold;'>Calcule Aqui</span>", unsafe_allow_html=True)
