@@ -39,7 +39,7 @@ st.markdown(
 st.markdown("<p class='footer'>Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
 
 
-st.markdown("<span style='color: green; font-style: italic;'>Calcule Aqui</span>", unsafe_allow_html=True)
+st.markdown("<span style='color: green; font-style: italic; font-size: 20px;'>Calcule Aqui</span>", unsafe_allow_html=True)
 
 botaotipoanalise = st.selectbox('##### Para começarmos, escolha uma opção abaixo: ', options=('Abas do site Reclame Aqui', 'Período específico'))
 
