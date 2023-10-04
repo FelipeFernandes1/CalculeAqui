@@ -47,10 +47,10 @@ botaotipoanalise = st.selectbox('Para começarmos, escolha uma opção abaixo: '
 try:
     if botaotipoanalise == 'Abas do site Reclame Aqui':
         with st.sidebar:
-            empresa = st.text_input(label='#### Informe o nome da empresa', placeholder='olx')
+            empresa = st.text_input(label='Informe o nome da empresa', placeholder='olx')
             if empresa == '':  # só para não deixar a variável em branco, pois estava exibindo erro
                 empresa = 'olx'
-            abaescolhida = st.selectbox(label='#### Escolha o período', options=('6 meses', '12 meses', 'Último ano', 'Penúltimo ano', 'Geral'))
+            abaescolhida = st.selectbox(label='Escolha o período', options=('6 meses', '12 meses', 'Último ano', 'Penúltimo ano', 'Geral'))
             botao1 = st.button(label='Calcular')
         if abaescolhida == '6 meses':
             abaescolhida = 0
