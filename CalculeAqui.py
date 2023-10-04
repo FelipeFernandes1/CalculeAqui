@@ -6,7 +6,7 @@ import re  #serve para extrair o número float da string(expressão regular)
 import cfscrape  #É uma alternativa à biblioteca Request
 
 
-st.markdown("<p class='footer' style='position: fixed; bottom: 0; width: 100%; text-align: center;'>Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
+#st.markdown("<p class='footer' style='position: fixed; bottom: 0; width: 100%; text-align: center;'>Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
 
 
 st.markdown("<span style='color: green; font-style: italic; font-size: 50px; font-weight: bold;'>Calcule Aqui</span>", unsafe_allow_html=True)
@@ -534,8 +534,7 @@ try:
                         nova_reputacao = 'BOM'
             resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação RA1000 você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo BOM.'''
     st.markdown(f'''##### {resultado}''')  #Printa o resultado no app
-    #if len(resultado) > 2:
-        #st.markdown(' ', help='O algoritmo considera como "avaliação positiva" aquela que obtém nota máxima nas três perguntas que compõem a avaliação. A "avaliação negativa" é proporcionalmente oposta, ou seja aquela que obtém nota mínima nas três perguntas que compõem a avaliação.')
+    st.markdown("<p class='footer' >Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
 except:
     st.write('''Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.
 
