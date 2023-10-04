@@ -173,32 +173,32 @@ try:
         reputacao = ' '
 
         if IR >= 90 and MA >= 7 and IS >= 90 and IN >= 70 and avaliacoes >= 50:
-            reputacao = ':green[**RA1000**]'
+            reputacao = 'RA1000'
         elif avaliacoes < 10 and IR > 50:
             reputacao = 'SEM ÍNDICE'
         elif AR < 5 or IR <= 50:
-            reputacao = ':violet[NÃO RECOMENDADA]'
+            reputacao = 'NÃO RECOMENDADA'
         elif avaliacoes < 10:
             reputacao = 'SEM ÍNDICE'
         elif AR <= 5.9:
-            reputacao = ':red[RUIM]'
+            reputacao = 'RUIM'
         elif AR <= 6.9:
-            reputacao = ':orange[REGULAR]'
+            reputacao = 'REGULAR'
         elif AR <= 7.9:
-            reputacao = ':blue[BOM]'
+            reputacao = 'BOM'
         else:
-            reputacao = ':green[ÓTIMO]'
+            reputacao = 'ÓTIMO'
 
         # PREVISÕES PARA TODAS CLASSIFICAÇÕES
 
-        if reputacao == ':green[**RA1000**]':
+        if reputacao == 'RA1000':
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
             IR2 = ((respondidas + novas_respostas_publicas) / reclamacoes) * 100
             AR2 = 0
             nova_reputacao = ' '
-            while nova_reputacao != ':green[ÓTIMO]':
+            while nova_reputacao != 'ÓTIMO':
                 novas_avaliacoes_negativas = novas_avaliacoes_negativas + 1
                 AR2 = ((IR2 * 2) \
                        + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -216,10 +216,10 @@ try:
                         avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100
                 avaliacoes2 = novas_avaliacoes_negativas + avaliacoes
                 if IR2 < 90 or MA2 < 7 or IS2 < 90 or IN2 < 70 or avaliacoes2 < 50:
-                    nova_reputacao = ':green[ÓTIMO]'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Contudo, se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo :green[ÓTIMO].'''
+                    nova_reputacao = 'ÓTIMO'
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Contudo, se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo ÓTIMO.'''
 
-        elif reputacao == ':violet[NÃO RECOMENDADA]' and IR <= 50 and avaliacoes < 10:
+        elif reputacao == 'NÃO RECOMENDADA' and IR <= 50 and avaliacoes < 10:
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
@@ -256,7 +256,7 @@ try:
                 novas_avaliacoes_positivas = novas_avaliacoes_positivas + 1
             resultado = f'''Seu status é {reputacao}. Essa classificação ocorre pois para o cálculo é necessário no mínimo 10 avaliações. Para obter reputação é necessário mais {novas_avaliacoes_positivas} avaliações.'''
 
-        elif reputacao == ':violet[NÃO RECOMENDADA]' and AR < 5:
+        elif reputacao == 'NÃO RECOMENDADA' and AR < 5:
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
@@ -275,7 +275,7 @@ try:
                                 avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                 AR2 = round(AR2, 1)
             if AR2 >= 5:
-                nova_reputacao = ':red[RUIM]'
+                nova_reputacao = 'RUIM'
             if IR2 >= 51 and AR2 < 5:
                 while IR2 < 90:
                     novas_respostas_publicas = novas_respostas_publicas + 1  # variável de controle
@@ -289,9 +289,9 @@ try:
                                     avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                     AR2 = round(AR2, 1)
                     if AR2 >= 5:
-                        nova_reputacao = ':red[RUIM]'
+                        nova_reputacao = 'RUIM'
                         break
-                while nova_reputacao != ':red[RUIM]':
+                while nova_reputacao != 'RUIM':
                     novas_avaliacoes_positivas = novas_avaliacoes_positivas + 1  # variável de controle
                     AR2 = ((IR2 * 2) \
                            + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -302,13 +302,13 @@ try:
                                     avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                     AR2 = round(AR2, 1)
                     if AR2 >= 5:
-                        nova_reputacao = ':red[RUIM]'
+                        nova_reputacao = 'RUIM'
             v1 = novas_avaliacoes_positivas
             v2 = novas_respostas_publicas
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :red[RUIM] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas.'''
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação RUIM você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas.'''
 
 
-        elif reputacao == ':violet[NÃO RECOMENDADA]':
+        elif reputacao == 'NÃO RECOMENDADA':
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
@@ -329,7 +329,7 @@ try:
             resultado = f'''Sua reputação é {reputacao}, porém o AR é {AR}. Essa classificação ocorre pois você possui o índice de resposta igual ou inferior a 50%. Ao responder mais {novas_respostas_publicas} respostas públicas, sua nova AR será {AR2} e terá a classificação normalizada.'''
 
 
-        elif reputacao == ':red[RUIM]':
+        elif reputacao == 'RUIM':
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
@@ -348,9 +348,9 @@ try:
                                 avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                 AR2 = round(AR2, 1)
                 if AR2 >= 6:
-                    nova_reputacao = ':orange[REGULAR]'
+                    nova_reputacao = 'REGULAR'
                     break
-            while nova_reputacao != ':orange[REGULAR]':
+            while nova_reputacao != 'REGULAR':
                 novas_avaliacoes_positivas = novas_avaliacoes_positivas + 1  # variável de controle
                 AR2 = ((IR2 * 2) \
                        + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -361,7 +361,7 @@ try:
                                 avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                 AR2 = round(AR2, 1)
                 if AR2 >= 6:
-                    nova_reputacao = ':orange[REGULAR]'
+                    nova_reputacao = 'REGULAR'
             v1 = novas_avaliacoes_positivas
             v2 = novas_respostas_publicas
             novas_avaliacoes_positivas = 0
@@ -370,8 +370,8 @@ try:
             IR2 = ((respondidas + novas_respostas_publicas) / reclamacoes) * 100
             AR2 = 0
             nova_reputacao = ' '
-            if reputacao == ':red[RUIM]':
-                while nova_reputacao != ':violet[NÃO RECOMENDADA]':
+            if reputacao == 'RUIM':
+                while nova_reputacao != 'NÃO RECOMENDADA':
                     novas_avaliacoes_negativas = novas_avaliacoes_negativas + 1
                     AR2 = ((IR2 * 2) \
                            + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -382,10 +382,10 @@ try:
                                     avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                     AR2 = round(AR2, 1)
                     if AR2 < 5:
-                        nova_reputacao = ':violet[NÃO RECOMENDADA]'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :orange[REGULAR] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo :violet[NÃO RECOMENDADA].'''
+                        nova_reputacao = 'NÃO RECOMENDADA'
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação REGULAR você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo NÃO RECOMENDADA.'''
 
-        elif reputacao == ':orange[REGULAR]':
+        elif reputacao == 'REGULAR':
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
@@ -404,9 +404,9 @@ try:
                                 avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                 AR2 = round(AR2, 1)
                 if AR2 >= 7:
-                    nova_reputacao = ':blue[BOM]'
+                    nova_reputacao = 'BOM'
                     break
-            while nova_reputacao != ':blue[BOM]':
+            while nova_reputacao != 'BOM':
                 novas_avaliacoes_positivas = novas_avaliacoes_positivas + 1  # variável de controle
                 AR2 = ((IR2 * 2) \
                        + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -417,7 +417,7 @@ try:
                                 avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                 AR2 = round(AR2, 1)
                 if AR2 >= 7:
-                    nova_reputacao = ':blue[BOM]'
+                    nova_reputacao = 'BOM'
             v1 = novas_avaliacoes_positivas
             v2 = novas_respostas_publicas
             novas_avaliacoes_positivas = 0
@@ -426,8 +426,8 @@ try:
             IR2 = ((respondidas + novas_respostas_publicas) / reclamacoes) * 100
             AR2 = 0
             nova_reputacao = ' '
-            if reputacao == ':orange[REGULAR]':
-                while nova_reputacao != ':red[RUIM]':
+            if reputacao == 'REGULAR':
+                while nova_reputacao != 'RUIM':
                     novas_avaliacoes_negativas = novas_avaliacoes_negativas + 1
                     AR2 = ((IR2 * 2) \
                            + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -438,10 +438,10 @@ try:
                                     avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                     AR2 = round(AR2, 1)
                     if AR2 < 6:
-                        nova_reputacao = ':red[RUIM]'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :blue[BOM] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo :red[RUIM].'''
+                        nova_reputacao = 'RUIM'
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação BOM você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo RUIM.'''
 
-        elif reputacao == ':blue[BOM]':
+        elif reputacao == 'BOM':
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
@@ -460,9 +460,9 @@ try:
                                 avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                 AR2 = round(AR2, 1)
                 if AR2 >= 8:
-                    nova_reputacao = ':green[ÓTIMO]'
+                    nova_reputacao = 'ÓTIMO'
                     break
-            while nova_reputacao != ':green[ÓTIMO]':
+            while nova_reputacao != 'ÓTIMO':
                 novas_avaliacoes_positivas = novas_avaliacoes_positivas + 1  # variável de controle
                 AR2 = ((IR2 * 2) \
                        + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -473,7 +473,7 @@ try:
                                 avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                 AR2 = round(AR2, 1)
                 if AR2 >= 8:
-                    nova_reputacao = ':green[ÓTIMO]'
+                    nova_reputacao = 'ÓTIMO'
             v1 = novas_avaliacoes_positivas
             v2 = novas_respostas_publicas
             novas_avaliacoes_positivas = 0
@@ -482,8 +482,8 @@ try:
             IR2 = ((respondidas + novas_respostas_publicas) / reclamacoes) * 100
             AR2 = 0
             nova_reputacao = ' '
-            if reputacao == ':blue[BOM]':
-                while nova_reputacao != ':orange[REGULAR]':
+            if reputacao == 'BOM':
+                while nova_reputacao != 'REGULAR':
                     novas_avaliacoes_negativas = novas_avaliacoes_negativas + 1
                     AR2 = ((IR2 * 2) \
                            + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -494,10 +494,10 @@ try:
                                     avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                     AR2 = round(AR2, 1)
                     if AR2 < 7:
-                        nova_reputacao = ':orange[REGULAR]'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :green[ÓTIMO] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo :orange[REGULAR].'''
+                        nova_reputacao = 'REGULAR'
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação ÓTIMO você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo REGULAR.'''
 
-        elif reputacao == ':green[ÓTIMO]':
+        elif reputacao == 'ÓTIMO':
             novas_avaliacoes_positivas = 0
             novas_avaliacoes_negativas = 0
             novas_respostas_publicas = 0
@@ -522,8 +522,8 @@ try:
                         avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IS)) * 100) >= 90 \
                         and ((IN + ((((IN / 100) * avaliacoes) + (novas_avaliacoes_positivas)) / (
                         avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) >= 70:
-                    nova_reputacao = ':green[**RA1000**]'
-            while nova_reputacao != ':green[**RA1000**]':
+                    nova_reputacao = 'RA1000'
+            while nova_reputacao != 'RA1000':
                 novas_avaliacoes_positivas = novas_avaliacoes_positivas + 1  # variável de controle
                 AR2 = ((IR2 * 2) \
                        + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -540,7 +540,7 @@ try:
                         avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IS)) * 100) >= 90 \
                         and ((IN + ((((IN / 100) * avaliacoes) + (novas_avaliacoes_positivas)) / (
                         avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) >= 70:
-                    nova_reputacao = ':green[**RA1000**]'
+                    nova_reputacao = 'RA1000'
             v1 = novas_avaliacoes_positivas
             v2 = novas_respostas_publicas
             novas_avaliacoes_positivas = 0
@@ -549,8 +549,8 @@ try:
             IR2 = ((respondidas + novas_respostas_publicas) / reclamacoes) * 100
             AR2 = 0
             nova_reputacao = ' '
-            if reputacao == ':green[ÓTIMO]':
-                while nova_reputacao != ':blue[BOM]':
+            if reputacao == 'ÓTIMO':
+                while nova_reputacao != 'BOM':
                     novas_avaliacoes_negativas = novas_avaliacoes_negativas + 1
                     AR2 = ((IR2 * 2) \
                            + ((MA + ((((MA * avaliacoes) + (novas_avaliacoes_positivas * 10)) / (
@@ -561,13 +561,13 @@ try:
                                     avaliacoes + novas_avaliacoes_positivas + novas_avaliacoes_negativas) - IN)) * 100) * 2)) / 100
                     AR2 = round(AR2, 1)
                     if AR2 < 8:
-                        nova_reputacao = ':blue[BOM]'
-            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação :green[**RA1000**] você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo :blue[BOM].'''
+                        nova_reputacao = 'BOM'
+            resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação RA1000 você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo BOM.'''
     st.markdown(f'''##### {resultado}''')  #Printa o resultado no app
-    if len(resultado) > 2:
-        st.markdown(' ', help='O algoritmo considera como "avaliação positiva" aquela que obtém nota máxima nas três perguntas que compõem a avaliação. A "avaliação negativa" é proporcionalmente oposta, ou seja aquela que obtém nota mínima nas três perguntas que compõem a avaliação.')
+    #if len(resultado) > 2:
+        #st.markdown(' ', help='O algoritmo considera como "avaliação positiva" aquela que obtém nota máxima nas três perguntas que compõem a avaliação. A "avaliação negativa" é proporcionalmente oposta, ou seja aquela que obtém nota mínima nas três perguntas que compõem a avaliação.')
 except:
-    st.write(''':red[Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.]
+    st.write('''Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.
 
 contato: fernandes290692@gmail.com''')
 
