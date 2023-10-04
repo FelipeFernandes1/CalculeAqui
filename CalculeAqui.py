@@ -41,7 +41,7 @@ st.markdown("<p class='footer'>Desenvolvido por <a href='https://www.linkedin.co
 
 st.markdown("<span style='color: green; font-style: italic; font-size: 50px; font-weight: bold;'>Calcule Aqui</span>", unsafe_allow_html=True)
 
-botaotipoanalise = st.selectbox('##### Para começarmos, escolha uma opção abaixo: ', options=('Abas do site Reclame Aqui', 'Período específico'))
+botaotipoanalise = st.selectbox('Para começarmos, escolha uma opção abaixo: ', options=('Abas do site Reclame Aqui', 'Período específico'))
 
 
 try:
