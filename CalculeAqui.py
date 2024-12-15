@@ -419,7 +419,11 @@ try:
                         nova_reputacao = 'BOM'
             resultado = f'''Sua reputação é {reputacao} e o AR é {AR}. Para atingir a reputação RA1000 você precisa de mais {v1} avaliações positivas e mais {v2} novas respostas públicas. Por outro lado se você obter mais {novas_avaliacoes_negativas} avaliações negativas, descerá para o selo BOM.'''
     st.markdown(f'''##### {resultado}''')  #Printa o resultado no app
-    st.markdown("<p class='footer' >Desenvolvido por <a href='https://www.linkedin.com/in/felipe-fernandes-325659105/'>Luiz Felipe Fernandes</a></p>", unsafe_allow_html=True)
+    st.markdown("""
+    <p class='footer'>
+        Desenvolvido por <a href='https://www.linkedin.com/in/felipe-fernandes-325659105/' target='_blank'>Felipe Fernandes</a>
+    </p>
+    """, unsafe_allow_html=True)
 except:
     st.write('''Erro! Por favor, verifique os dados inseridos ou entre em contato com o suporte.
 
