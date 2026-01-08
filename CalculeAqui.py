@@ -421,7 +421,7 @@ try:
     st.markdown(f'''##### {resultado}''')  #Printa o resultado no app
     st.markdown("""
     <p class='footer'>
-        Desenvolvido por <a href='https://www.linkedin.com/in/felipe-fernandes-325659105/' target='_blank'>Felipe Fernandes</a>
+        Desenvolvido por <a href='https://www.linkedin.com/in/luiz-felipe-fernandes-pires-325659105/' target='_blank'>Felipe Fernandes</a>
     </p>
     """, unsafe_allow_html=True)
 except:
