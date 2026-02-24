@@ -1,7 +1,8 @@
-streamlit==1.4.0
-protobuf==3.20.3
-altair==4.2.2
+streamlit>=1.30.0
+protobuf
+altair>=5.0.0
 setuptools
+
 
 
 
